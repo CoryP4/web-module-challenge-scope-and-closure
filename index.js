@@ -78,16 +78,31 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+const score = []
 
-function finalScore(inning, num){
+function finalScore(range, operate){
 
-  return numbers({num});
-  /*Code Here*/
+  return operate(range)
+  
+} 
+
+function addItUpHome(range){
+
+  return score.push (`Home:` + (Math.floor(Math.random() * Math.floor(range))));
   
 }
 
+function addItUpAway(range){
 
+  return score.push (`Away:` + (Math.floor(Math.random() * Math.floor(range))));
+  
+}
+finalScore(9, addItUpHome);
+finalScore(9, addItUpAway);
 
+console.log(score)
+
+//only getting 0-8?, Can I / should I be able to combine the two functions below finalScore?
 
 /* Task 4: 
 
